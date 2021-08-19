@@ -9,10 +9,10 @@ del req['timestamp']
 del req['metadata']
 l = list(req.items())
 t = l[0][1]
-i = 0
+iterator = 0
 symb = input("Enter your Stock Symbol: ")
 symb = symb.upper()
-while i <= len(t):
+while iterator <= len(t):
     t = dict(l[0][1][i])
     if t['symbol'] == symb:
         print("LTP:",t['lastPrice'])
@@ -23,8 +23,7 @@ while i <= len(t):
         print("DAY HIGH:",t['dayHigh'])
         print("CLOSE:",t['previousClose'])
         break
-    if i==len(t) and t['symbol'] != symb:
+    if iterator==len(t) and t['symbol'] != symb:
         print("PLESE ENTER VALID SYMBOL")
-        
-    i+=1
+    iterator+=1
     
